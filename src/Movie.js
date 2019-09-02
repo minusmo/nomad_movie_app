@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Movie(id, year, title, summary, poster, genres) {
+function Movie({id, year, title, summary, poster, genres}) {
   return (
     <div className="movies_movie">
       <img src={poster} alt={title} title={title}></img>
@@ -11,7 +11,7 @@ function Movie(id, year, title, summary, poster, genres) {
         </h3>
         <h5 className="movie_year">{year}</h5>
         <ul className="genres">
-          {genres.map((genres, index) => (
+          {genres.map((genres,index) => (
             <li key={index} className="genres_genre">
               {genres}
             </li>
@@ -23,7 +23,7 @@ function Movie(id, year, title, summary, poster, genres) {
   );
 }
 
-Movie.PropTypes = {
+Movie.propTypes = {
   id: PropTypes.number.isRequired,
   year: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
